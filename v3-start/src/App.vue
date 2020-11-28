@@ -2,9 +2,29 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <router-view :key="key"/>
   </div>
-  <router-view/>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      key: this.$route.fullPath
+    }
+  },
+  setup (props) {
+    console.log(props)
+    // const key = $route.fullPath
+    return {
+      // key
+    }
+  },
+  mounted () {
+    // console.log(this.$route.fullPath)
+  }
+}
+</script>
 
 <style lang="stylus">
 #app
